@@ -1,0 +1,102 @@
+{
+  "name": "ollama-cloud-for-copilot",
+  "displayName": "Ollama Cloud: Copilot Provider",
+  "description": "Use Ollama Cloud models in VS Code Copilot Chat from https://ollama.com/v1.",
+  "version": "0.1.5",
+  "type": "module",
+  "publisher": "DenizhanDaklr",
+  "icon": "media/ollama-logo.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zelosleone/Ollama-Cloud-for-Copilot.git"
+  },
+  "homepage": "https://github.com/zelosleone/Ollama-Cloud-for-Copilot#readme",
+  "bugs": {
+    "url": "https://github.com/zelosleone/Ollama-Cloud-for-Copilot/issues"
+  },
+  "engines": {
+    "vscode": "^1.118.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "keywords": [
+    "ollama",
+    "ollama cloud",
+    "copilot",
+    "github copilot",
+    "language model",
+    "chat",
+    "openai compatible"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "extensionKind": [
+    "workspace"
+  ],
+  "contributes": {
+    "languageModelChatProviders": [
+      {
+        "vendor": "ollama-cloud",
+        "displayName": "Ollama Cloud"
+      }
+    ],
+    "commands": [
+      {
+        "command": "ollamaCloud.setApiKey",
+        "title": "Ollama Cloud: Set API Key"
+      },
+      {
+        "command": "ollamaCloud.clearApiKey",
+        "title": "Ollama Cloud: Clear API Key"
+      },
+      {
+        "command": "ollamaCloud.showRegisteredModels",
+        "title": "Ollama Cloud: Show Registered Models"
+      },
+      {
+        "command": "ollamaCloud.showLogs",
+        "title": "Ollama Cloud: Show Logs"
+      }
+    ],
+    "configuration": {
+      "title": "Ollama Cloud",
+      "properties": {
+        "ollamaCloud.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Ollama Cloud API key fallback. Prefer the command palette to store it securely.",
+          "scope": "application"
+        },
+        "ollamaCloud.baseUrl": {
+          "type": "string",
+          "default": "https://ollama.com/v1",
+          "description": "Ollama Cloud OpenAI-compatible API base URL.",
+          "scope": "application"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "build": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.30",
+    "@types/vscode": "^1.118.0",
+    "@typescript-eslint/eslint-plugin": "8.53.0",
+    "@typescript-eslint/parser": "8.53.0",
+    "@vscode/vsce": "^3.9.1",
+    "eslint": "9.39.2",
+    "globals": "17.0.0",
+    "typescript": "5.9.3"
+  }
+}
