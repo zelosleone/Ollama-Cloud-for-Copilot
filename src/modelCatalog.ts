@@ -68,6 +68,7 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     maxOutputTokens: 32000,
     imageInput: false,
     toolCalling: true,
+    reasoning: false,
   },
   {
     apiModel: "deepseek-v3.1:671b",
@@ -124,6 +125,7 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     maxOutputTokens: 65536,
     imageInput: false,
     toolCalling: true,
+    reasoning: true,
   },
   {
     apiModel: "gemma3:12b",
@@ -156,6 +158,7 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     maxOutputTokens: 131072,
     imageInput: true,
     toolCalling: true,
+    reasoning: true,
   },
   {
     apiModel: "glm-4.6",
@@ -244,6 +247,7 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     maxOutputTokens: 128000,
     imageInput: false,
     toolCalling: true,
+    reasoning: true,
   },
   {
     apiModel: "minimax-m2.1",
@@ -252,6 +256,7 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     maxOutputTokens: 131072,
     imageInput: false,
     toolCalling: true,
+    reasoning: true,
   },
   {
     apiModel: "minimax-m2.5",
@@ -260,6 +265,7 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     maxOutputTokens: 131072,
     imageInput: false,
     toolCalling: true,
+    reasoning: true,
   },
   {
     apiModel: "minimax-m2.7",
@@ -268,6 +274,7 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     maxOutputTokens: 131072,
     imageInput: false,
     toolCalling: true,
+    reasoning: true,
   },
   {
     apiModel: "ministral-3:14b",
@@ -763,6 +770,21 @@ function inferReasoning(id: string): boolean {
     return true;
   }
 
+  // Gemma 4 supports thinking
+  if (id.startsWith("gemma4:")) {
+    return true;
+  }
+
+  // MiniMax: m2 series supports thinking
+  if (id.startsWith("minimax-m")) {
+    return true;
+  }
+
+  // Gemini 3 Flash supports thinking
+  if (id.startsWith("gemini-3-flash-preview")) {
+    return true;
+  }
+
   // GLM: all versions support thinking
   if (id.startsWith("glm-")) {
     return true;
@@ -792,9 +814,8 @@ function inferReasoning(id: string): boolean {
     return true;
   }
 
-  // Cogito, Nemotron 3, Ministral support thinking
+  // Nemotron 3, Ministral support thinking
   if (
-    id.startsWith("cogito-") ||
     id.startsWith("nemotron-3") ||
     id.startsWith("ministral-")
   ) {

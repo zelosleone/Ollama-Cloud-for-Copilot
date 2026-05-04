@@ -16,7 +16,7 @@ const DEEPSEEK_V4_SCHEMA = {
   },
 } as const;
 
-// GLM, Kimi, Cogito, Nemotron, Minstral use simple on/off thinking toggle.
+// GLM, Kimi, Gemma, Nemotron, Minstral use simple on/off thinking toggle.
 const BOOLEAN_THINKING_SCHEMA = {
   properties: {
     thinkingMode: {
@@ -95,11 +95,12 @@ export function getModelConfigurationSchema(
   switch (model.family) {
     case "glm":
     case "kimi":
-    case "cogito":
+    case "gemma":
     case "nemotron":
     case "ministral":
       return BOOLEAN_THINKING_SCHEMA;
     case "qwen":
+    case "gemini":
       return QWEN_SCHEMA;
     case "gpt-oss":
       return GPT_OSS_SCHEMA;
@@ -130,14 +131,17 @@ export function resolveModelRequestConfiguration(
     case "glm":
       return resolveGlm(options);
     case "kimi":
+    case "gemma":
       return resolveKimi(options);
     case "qwen":
+    case "gemini":
       return resolveQwen(options);
     case "gpt-oss":
       return resolveGptOss(options);
     case "cogito":
     case "nemotron":
     case "ministral":
+    case "minimax":
       return resolveBooleanThink(options);
     default:
       return {};
