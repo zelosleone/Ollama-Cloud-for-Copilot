@@ -2,7 +2,7 @@
   "name": "ollama-cloud-for-copilot",
   "displayName": "Ollama Cloud: Copilot Provider",
   "description": "Use Ollama Cloud models in VS Code Copilot Chat from https://ollama.com/v1.",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "type": "module",
   "publisher": "DenizhanDaklr",
   "icon": "media/ollama-logo.png",
@@ -36,7 +36,8 @@
   ],
   "main": "./out/extension.js",
   "extensionKind": [
-    "workspace"
+    "workspace",
+    "ui"
   ],
   "contributes": {
     "languageModelChatProviders": [
