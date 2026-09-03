@@ -21,14 +21,13 @@ Only models known to support thinking get configuration controls in the picker:
 | Family | Controls | What it sends |
 |---|---|---|
 | DeepSeek V4 (flash/pro) | Off / High / Max | `thinking.type` + `reasoning_effort` |
-| DeepSeek v3.1 | On / Off | `think` boolean |
 | GLM | On / Off | `thinking.type` + `clear_thinking` |
-| Kimi (k2.5, k2.6, k2-thinking) | On / Off | `thinking.type` |
-| Qwen (3.5, 3-next, 3-coder, 3-vl) | Off / Low / Medium / High | `reasoning_effort` |
+| Kimi (k2.6, k2.7-code, k3) | On / Off | `thinking.type` |
+| Qwen 3.5 | Off / Low / Medium / High | `reasoning_effort` |
 | GPT-OSS | Low / Medium / High | `think` level (cannot fully disable) |
-| Cogito, Nemotron 3, Ministral | On / Off | `think` boolean |
+| Gemma 4, Nemotron 3, MiniMax | On / Off | `thinking.type` / `think` boolean |
 
-Models without a schema (DeepSeek v3.2, Gemma, MiniMax, Mistral, RNJ, Devstral, etc.) still work — they just don't have thinking controls in the picker.
+Models without a schema (Mistral Large 3, etc.) still work — they just don't have thinking controls in the picker.
 
 ## Commands
 

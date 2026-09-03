@@ -62,94 +62,22 @@ const HUMANIZED_SEGMENTS: Record<string, string> = {
 
 const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
   {
-    apiModel: "cogito-2.1:671b",
-    family: "cogito",
-    maxInputTokens: 163840,
-    maxOutputTokens: 32000,
-    imageInput: false,
-    toolCalling: true,
-    reasoning: false,
-  },
-  {
-    apiModel: "deepseek-v3.1:671b",
-    family: "deepseek",
-    maxInputTokens: 163840,
-    maxOutputTokens: 163840,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
-    apiModel: "deepseek-v3.2",
-    family: "deepseek",
-    maxInputTokens: 163840,
-    maxOutputTokens: 65536,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
-    apiModel: "deepseek-v4-flash",
+    apiModel: "deepseek-v4-flash:0731",
     family: "deepseek",
     maxInputTokens: 1000000,
     maxOutputTokens: 384000,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
-    apiModel: "deepseek-v4-pro",
-    family: "deepseek",
-    maxInputTokens: 1000000,
-    maxOutputTokens: 384000,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
-    apiModel: "devstral-2:123b",
-    family: "devstral",
-    maxInputTokens: 262144,
-    maxOutputTokens: 262144,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
-    apiModel: "devstral-small-2:24b",
-    family: "devstral",
-    maxInputTokens: 262144,
-    maxOutputTokens: 262144,
-    imageInput: true,
-    toolCalling: true,
-  },
-  {
-    apiModel: "gemini-3-flash-preview",
-    family: "gemini",
-    maxInputTokens: 1048576,
-    maxOutputTokens: 65536,
     imageInput: false,
     toolCalling: true,
     reasoning: true,
   },
   {
-    apiModel: "gemma3:12b",
-    family: "gemma",
-    maxInputTokens: 131072,
-    maxOutputTokens: 131072,
-    imageInput: true,
-    toolCalling: false,
-  },
-  {
-    apiModel: "gemma3:27b",
-    family: "gemma",
-    maxInputTokens: 131072,
-    maxOutputTokens: 131072,
-    imageInput: true,
-    toolCalling: false,
-  },
-  {
-    apiModel: "gemma3:4b",
-    family: "gemma",
-    maxInputTokens: 131072,
-    maxOutputTokens: 131072,
-    imageInput: true,
-    toolCalling: false,
+    apiModel: "deepseek-v4-pro:0813",
+    family: "deepseek",
+    maxInputTokens: 1000000,
+    maxOutputTokens: 384000,
+    imageInput: false,
+    toolCalling: true,
+    reasoning: true,
   },
   {
     apiModel: "gemma4:31b",
@@ -161,36 +89,13 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     reasoning: true,
   },
   {
-    apiModel: "glm-4.6",
-    family: "glm",
-    maxInputTokens: 202752,
-    maxOutputTokens: 131072,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
-    apiModel: "glm-4.7",
-    family: "glm",
-    maxInputTokens: 202752,
-    maxOutputTokens: 131072,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
-    apiModel: "glm-5",
-    family: "glm",
-    maxInputTokens: 202752,
-    maxOutputTokens: 131072,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
     apiModel: "glm-5.1",
     family: "glm",
     maxInputTokens: 202752,
     maxOutputTokens: 131072,
     imageInput: false,
     toolCalling: true,
+    reasoning: true,
   },
   {
     apiModel: "glm-5.2",
@@ -198,6 +103,24 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     maxInputTokens: 1000000,
     maxOutputTokens: 131072,
     imageInput: false,
+    toolCalling: true,
+    reasoning: true,
+  },
+  {
+    apiModel: "glm-5.3",
+    family: "glm",
+    maxInputTokens: 1000000,
+    maxOutputTokens: 131072,
+    imageInput: false,
+    toolCalling: true,
+    reasoning: true,
+  },
+  {
+    apiModel: "glm-5.3-flash",
+    family: "glm",
+    maxInputTokens: 1000000,
+    maxOutputTokens: 131072,
+    imageInput: true,
     toolCalling: true,
     reasoning: true,
   },
@@ -218,14 +141,6 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     toolCalling: true,
   },
   {
-    apiModel: "kimi-k2.5",
-    family: "kimi",
-    maxInputTokens: 262144,
-    maxOutputTokens: 262144,
-    imageInput: true,
-    toolCalling: true,
-  },
-  {
     apiModel: "kimi-k2.6",
     family: "kimi",
     maxInputTokens: 262144,
@@ -243,54 +158,11 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     reasoning: true,
   },
   {
-    apiModel: "kimi-k2:1t",
-    family: "kimi",
-    maxInputTokens: 262144,
-    maxOutputTokens: 262144,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
-    apiModel: "kimi-k2-thinking",
-    family: "kimi",
-    maxInputTokens: 262144,
-    maxOutputTokens: 262144,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
     apiModel: "kimi-k3",
     family: "kimi",
     maxInputTokens: 1048576,
     maxOutputTokens: 262144,
     imageInput: true,
-    toolCalling: true,
-    reasoning: true,
-  },
-  {
-    apiModel: "minimax-m2",
-    family: "minimax",
-    maxInputTokens: 204800,
-    maxOutputTokens: 128000,
-    imageInput: false,
-    toolCalling: true,
-    reasoning: true,
-  },
-  {
-    apiModel: "minimax-m2.1",
-    family: "minimax",
-    maxInputTokens: 204800,
-    maxOutputTokens: 131072,
-    imageInput: false,
-    toolCalling: true,
-    reasoning: true,
-  },
-  {
-    apiModel: "minimax-m2.5",
-    family: "minimax",
-    maxInputTokens: 204800,
-    maxOutputTokens: 131072,
-    imageInput: false,
     toolCalling: true,
     reasoning: true,
   },
@@ -311,30 +183,6 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     imageInput: true,
     toolCalling: true,
     reasoning: true,
-  },
-  {
-    apiModel: "ministral-3:14b",
-    family: "ministral",
-    maxInputTokens: 262144,
-    maxOutputTokens: 128000,
-    imageInput: true,
-    toolCalling: true,
-  },
-  {
-    apiModel: "ministral-3:3b",
-    family: "ministral",
-    maxInputTokens: 262144,
-    maxOutputTokens: 128000,
-    imageInput: true,
-    toolCalling: true,
-  },
-  {
-    apiModel: "ministral-3:8b",
-    family: "ministral",
-    maxInputTokens: 262144,
-    maxOutputTokens: 128000,
-    imageInput: true,
-    toolCalling: true,
   },
   {
     apiModel: "mistral-large-3:675b",
@@ -375,54 +223,6 @@ const SNAPSHOT_MODELS: readonly SnapshotModelDefinition[] = [
     maxInputTokens: 262144,
     maxOutputTokens: 81920,
     imageInput: true,
-    toolCalling: true,
-  },
-  {
-    apiModel: "qwen3-coder:480b",
-    family: "qwen",
-    maxInputTokens: 262144,
-    maxOutputTokens: 65536,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
-    apiModel: "qwen3-coder-next",
-    family: "qwen",
-    maxInputTokens: 262144,
-    maxOutputTokens: 65536,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
-    apiModel: "qwen3-next:80b",
-    family: "qwen",
-    maxInputTokens: 262144,
-    maxOutputTokens: 32768,
-    imageInput: false,
-    toolCalling: true,
-  },
-  {
-    apiModel: "qwen3-vl:235b",
-    family: "qwen",
-    maxInputTokens: 262144,
-    maxOutputTokens: 32768,
-    imageInput: true,
-    toolCalling: true,
-  },
-  {
-    apiModel: "qwen3-vl:235b-instruct",
-    family: "qwen",
-    maxInputTokens: 262144,
-    maxOutputTokens: 131072,
-    imageInput: true,
-    toolCalling: true,
-  },
-  {
-    apiModel: "rnj-1:8b",
-    family: "rnj",
-    maxInputTokens: 32768,
-    maxOutputTokens: 4096,
-    imageInput: false,
     toolCalling: true,
   },
 ];
@@ -725,6 +525,9 @@ function inferMaxInputTokens(id: string): number {
   if (id.startsWith("glm-5.2")) {
     return 1000000;
   }
+  if (id.startsWith("glm-5.3")) {
+    return 1000000;
+  }
   if (id.startsWith("glm-")) {
     return 202752;
   }
@@ -780,9 +583,11 @@ function inferMaxOutputTokens(id: string): number {
   if (id.startsWith("qwen3.5:397b")) {
     return 81920;
   }
+  if (id.startsWith("gpt-oss")) {
+    return 32768;
+  }
   if (
     id.startsWith("deepseek-") ||
-    id.startsWith("gpt-oss") ||
     id.startsWith("qwen3-next") ||
     id.startsWith("qwen3-vl:235b") ||
     id.startsWith("nemotron-3-super") ||
@@ -808,6 +613,8 @@ function inferImageInput(id: string): boolean {
     id.startsWith("kimi-k2.5") ||
     id.startsWith("kimi-k2.6") ||
     id.startsWith("kimi-k2.7") ||
+    id.startsWith("kimi-k3") ||
+    id.startsWith("glm-5.3-flash") ||
     id.startsWith("minimax-m3") ||
     id.startsWith("ministral-") ||
     id.startsWith("mistral-large-") ||
@@ -851,6 +658,7 @@ function inferReasoning(id: string): boolean {
 
   // Kimi: k2.5, k2.6, and k2-thinking support thinking
   if (
+    id.startsWith("kimi-k3") ||
     id.startsWith("kimi-k2.5") ||
     id.startsWith("kimi-k2.6") ||
     id.startsWith("kimi-k2.7") ||
