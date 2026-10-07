@@ -1,5 +1,7 @@
 # Ollama Cloud for Copilot
 
+> **Retired.** This extension is no longer maintained and is no longer on the Visual Studio Marketplace.
+
 VS Code extension that puts Ollama Cloud models in Copilot Chat.
 
 ```
